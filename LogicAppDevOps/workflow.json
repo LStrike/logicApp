@@ -7,6 +7,23 @@
                 "kind": "CurrentTime",
                 "inputs": {},
                 "runAfter": {}
+            },
+            "Initialize_variable": {
+                "type": "InitializeVariable",
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "CurrentTime",
+                            "type": "string",
+                            "value": "@body('Current_time')"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Current_time": [
+                        "SUCCEEDED"
+                    ]
+                }
             }
         },
         "contentVersion": "1.0.0.0",
